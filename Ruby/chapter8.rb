@@ -76,3 +76,6 @@ def largest_square
   end
 end
 puts largest_square
+(1..100).detect{ |num| num*num > 1000 }
+(1..100).select{ |num| num*num > 1000 }
+(1..100).any{ |num| num*num > 1000 }
