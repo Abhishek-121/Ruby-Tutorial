@@ -1,0 +1,6 @@
+New line get added
+Sum of 2 number : 7 + 5 = 12
+Line gets added into the file
+This is Ruby tutorial
+Multiplication of 2 number : 7 + 5 = 35
+Append mode is executed
