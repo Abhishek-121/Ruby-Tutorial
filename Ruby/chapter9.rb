@@ -3,7 +3,6 @@
 class Test
   def val=(val)
     @val = val
-    return 50
   end
 end
 t = Test.new
@@ -34,7 +33,7 @@ array << 34
 print array
 puts ' '
 
-class Score_track
+class Score_Track
   def initialize
     @count = @total_score = 0
   end
@@ -50,7 +49,7 @@ class Score_track
     Float(@total_score) / @count
   end
 end
-scores = Score_track.new
+scores = Score_Track.new
 scores << 10 << 20 << 30 << 40
 puts "Average is : #{scores.average}"
 
