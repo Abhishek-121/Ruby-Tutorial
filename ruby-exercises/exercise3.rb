@@ -13,12 +13,10 @@
 def fibonacci(number)
   num1 = 0
   num2 = 1
-  res = []
   while num2 <= number
     num1, num2 = num2, num1 + num2
-    res << num1
+    yield(num1)
   end
-  yield(res)
 end
 input_string = Integer(gets)
-fibonacci(input_string) { |num| print num.to_s }
+fibonacci(input_string) { |num| print "#{num} " }

@@ -8,12 +8,11 @@
 # * If no argument is passed(or blank string argument). the output should be "Please provide an input"
 
 # Code:
+
 input_string = gets.chomp 
-def check_pallindrone?(input_string)
-  if input_string == input_string.reverse
-    puts 'Input string is a palindrome'
-  else
-    puts 'Input string is not a palindrome'
+class String
+  def check_palindrome?
+    self == self.reverse
   end
 end
 
@@ -21,4 +20,8 @@ if input_string == ''
   puts 'Please provide an input'
   input_string = gets.chomp
 end
-check_pallindrone?(input_string)
+if input_string.check_palindrome?
+  puts 'Input string is a palindrome'
+else
+  puts 'Input string is not a palindrome'
+end
