@@ -16,7 +16,7 @@
 input_string = gets
 
 def count_occurence(input_string)
-  input_string.delete(' ').split('').group_by { |chr| chr }.transform_values(&:size)
+  input_string.delete(' ').chars().group_by { |chr| chr }.transform_values(&:size)
 end
 
 puts count_occurence(input_string.gsub!(/\W+|\d+/, '').chomp)
