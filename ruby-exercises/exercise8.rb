@@ -12,9 +12,12 @@
 # Code :
 
 def power(arr, x)
-  arr.map { |ele| ele**x }
+  arr.map { |ele| ele.to_i**x }
 end
 
-arr = gets.chomp.split.map(&:to_i)
-x = Integer(gets)
+input = ARGV.to_s
+arr = input.strip.gsub!(/"|'|\[|\]|,|/, ' ').split(' ') 
+x = arr[arr.length-1].to_i
+arr.pop
+
 print power(arr, x)
