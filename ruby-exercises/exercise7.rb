@@ -1,7 +1,9 @@
-Exercise: 7 - Inverse Case
+# frozen_string_literal: true
+
+# Exercise: 7 - Inverse Case
 
 # Overwrite the default 'to_s' method such that it inverses the case of each letter.
-#   Eg: "hello WORLD".to_s -> "HELLO world". 
+#   Eg: "hello WORLD".to_s -> "HELLO world".
 #   Your program should accept a string as an argument and print the output on standard output.
 #   [input]
 # "G@@d MorninG"
@@ -13,9 +15,9 @@ Exercise: 7 - Inverse Case
 
 class String
   def to_s
-    self.swapcase
+    swapcase
   end
 end
-input_string = gets.chomp
+# input_string = gets.chomp
+input_string = ARGV.join(' ').chomp
 puts input_string.to_s
-
