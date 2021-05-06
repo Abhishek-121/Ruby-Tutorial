@@ -18,5 +18,6 @@ def fibonacci(number)
     yield(num1)
   end
 end
-input_string = Integer(gets)
+input_string = ARGV[0].to_i
+puts input_string
 fibonacci(input_string) { |num| print "#{num} " }

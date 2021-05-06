@@ -1,7 +1,9 @@
+# frozen_string_literal: true
+
 # Exercise: 4 - Palindrome
 
-# Output whether the input string is a palindrome.Add a method palindrome? 
-# in String class, so that it can be called as str.palindrome? this method should return true/false. 
+# Output whether the input string is a palindrome.Add a method palindrome?
+# in String class, so that it can be called as str.palindrome? this method should return true/false.
 # Input should be passed as a command line argument. * When the string is Palindrome, the output should be "Input string is a palindrome"
 
 # * When the string is not Palindrome, the output should be "Input string is not a palindrome"
@@ -9,10 +11,11 @@
 
 # Code:
 
-input_string = gets.chomp 
+input_string = ARGV.join(' ')
+puts input_string
 class String
-  def palindrome?
-    self == self.reverse
+  def check_palindrome?
+    self == reverse
   end
 end
 
@@ -20,7 +23,7 @@ if input_string == ''
   puts 'Please provide an input'
   input_string = gets.chomp
 end
-if input_string.palindrome?
+if input_string.check_palindrome?
   puts 'Input string is a palindrome'
 else
   puts 'Input string is not a palindrome'

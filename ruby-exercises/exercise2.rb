@@ -12,5 +12,5 @@
 # [output]
 # g**d m*rn*ng
 
-input_string = gets
-puts input_string.downcase.chomp.gsub(/[a,e,i,o,u]/, '*')
+input_string = ARGV
+puts input_string.join(' ').downcase.chomp.gsub(/[a,e,i,o,u]/, '*')
