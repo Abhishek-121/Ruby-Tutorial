@@ -19,5 +19,4 @@ def fibonacci(number)
   end
 end
 input_string = ARGV[0].to_i
-puts input_string
 fibonacci(input_string) { |num| print "#{num} " }

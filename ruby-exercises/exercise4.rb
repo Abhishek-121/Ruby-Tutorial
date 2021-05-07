@@ -14,7 +14,7 @@
 input_string = ARGV.join(' ')
 puts input_string
 class String
-  def check_palindrome?
+  def palindrome?
     self == reverse
   end
 end
@@ -23,7 +23,7 @@ if input_string == ''
   puts 'Please provide an input'
   input_string = gets.chomp
 end
-if input_string.check_palindrome?
+if input_string.palindrome?
   puts 'Input string is a palindrome'
 else
   puts 'Input string is not a palindrome'
