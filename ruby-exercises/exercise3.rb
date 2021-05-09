@@ -10,6 +10,7 @@
 # 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987
 
 # Code :
+
 def fibonacci(number)
   num1 = 0
   num2 = 1
