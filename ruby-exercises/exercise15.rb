@@ -21,10 +21,11 @@ def prime_number(n)
   res = []
   prime = Array.new(n + 1, true)
   (2..n).each do |x|
-    break if x * x > n
+    num = x * x
+    break if num > n
 
     if prime[x]
-      (x * x..n).step(x).each do |multiples|
+      (num..n).step(x).each do |multiples|
         prime[multiples] = false
       end
     end
@@ -35,5 +36,5 @@ def prime_number(n)
   res
 end
 
-num = ARGV[0].to_i
-print "#{prime_number(num)}\n"
+input = ARGV[0].to_i
+print "#{prime_number(input)}\n"
