@@ -18,6 +18,5 @@ class String
     swapcase
   end
 end
-# input_string = gets.chomp
 input_string = ARGV.join(' ').chomp
 puts input_string.to_s

@@ -11,13 +11,13 @@
 
 # Code :
 
-def power(arr, x)
-  arr.map { |ele| ele.to_i**x }
+def power(arr, pow)
+  arr.map { |ele| ele**pow }
 end
 
-input = ARGV.to_s
-arr = input.strip.gsub!(/"|'|\[|\]|,|/, ' ').split(' ') 
-x = arr[arr.length-1].to_i
-arr.pop
+input = ARGV
+# arr = input.strip.gsub!(/"|'|\[|\]|,|/, ' ').split(' ')
+arr = input[0].gsub('[', '').gsub(']', '').split(',').map(&:to_i)
+pow = input[1].to_i
 
-print power(arr, x)
+print power(arr, pow)

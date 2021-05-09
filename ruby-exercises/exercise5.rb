@@ -8,10 +8,8 @@ class Account
     @@account_no += 1
   end
 
-  def print_details
-    puts "Account no : #{@@account_no}"
-    puts "Account holder name : #{@name}"
-    puts "Account balance : #{@balance} "
+  def inspect
+    "Account no : #{@@account_no}\nAccount holder name : #{@name}\nAccount balance : #{@balance} "
   end
 
   def deposit(amount)
@@ -37,7 +35,7 @@ transfer = str[2].split(':')[1].to_i
 
 a = Account.new(customer1, customer1_balance)
 a.withdraw(transfer)
-a.print_details
+puts a.inspect
 b = Account.new(customer2, customer2_balance)
 b.deposit(transfer)
-b.print_details
+puts b.inspect
