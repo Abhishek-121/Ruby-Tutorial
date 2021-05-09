@@ -12,7 +12,6 @@
 # Code:
 
 input_string = ARGV.join(' ')
-puts input_string
 class String
   def palindrome?
     self == reverse
