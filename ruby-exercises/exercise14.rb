@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Exercise: 14 Reverse Sentence
 
 # Use string methods to reverse the words arrangement in a sentence.

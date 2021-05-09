@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Exercise: 13 Factorial - Ranges
 # Rewrite the factorial method using ranges. Your script should take a number from the command line and
 # output the result on standard output
@@ -25,6 +23,4 @@ def factorial(n)
 end
 
 n = ARGV[0].to_i
-# puts n+2
 puts factorial(n)
-# puts p
