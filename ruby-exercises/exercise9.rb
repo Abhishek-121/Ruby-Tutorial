@@ -14,17 +14,16 @@
 # Code :
 
 def hash_count(input_hash)
-  hash = {}
-  input_hash.sort_by!(&:length)
+  res = {}
   input_hash.each do |x|
     key = x.length
-    if hash[key]
-      hash[key].push(x)
+    if res[key]
+      res[key].push(x)
     else
-      hash[key] = [x]
+      res[key] = [x]
     end
   end
-  hash
+  res.sort.to_h
 end
 
 input_hash = gets.chomp.strip.gsub!(/"|'|\[|\]/, '').split(',')

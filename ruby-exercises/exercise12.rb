@@ -20,12 +20,12 @@
 # Special characters = 3
 
 # Code :
+
 def character_count(input_string)
   lower_case = 0
   upper_case = 0
   digits = 0
   special_character = 0
-  res = []
   input_string.each do |x|
     case x
     when 'A'..'Z'
@@ -38,12 +38,13 @@ def character_count(input_string)
       special_character += 1
     end
   end
-  res << lower_case << upper_case << digits << special_character
+  res = {'Lowercase characters'=>lower_case, 'Uppercase characters'=>upper_case, 'Numeric characters'=>digits, 'Special characters'=> special_character}
+  res
 end
 
 input_string = gets.chomp.split('')
-char_arr = character_count(input_string)
-puts "Lowercase characters = #{char_arr[0]}"
-puts "Uppercase characters = #{char_arr[1]}"
-puts "Numeric characters = #{char_arr[2]}"
-puts "Special characters = #{char_arr[3]}"
+hash_list = character_count(input_string)
+hash_list.map do |key, value|
+  puts "#{key} = #{value}"
+end
+
