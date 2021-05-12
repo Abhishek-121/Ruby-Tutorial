@@ -5,6 +5,12 @@ class Vehicle
     @name = name
     @price = price
   end
+
+  def to_s
+    str = ""
+    str += "Vehicle name: #{@name}\n"
+    str += "Vehicle price: #{@price}\n"
+  end
 end
 
 class Bike < Vehicle
@@ -18,23 +24,22 @@ class Bike < Vehicle
   def to_s
     str = ""
     str += "Bike name: #{@name}\n"
-    str += "Bike price: #{@percent_price_increase}\n"
+    str += "Bike price: #{@price}\n"
     str += "Bike Dealer: #{@dealer}\n"
   end
 
   def price_increase(ppi)
-    @percent_price_increase = @price + (@price * ppi.to_f)/100
+    @price += (@price * ppi.to_f)/100
   end
 end
 
 input = ARGV
 name, price, dealer, ppi = input[0], input[1].to_i, input[2], input[3].to_f
-puts "Bike Name: #{name}"
-puts "Bike Price: #{price}"
-puts "Bike Dealer: #{dealer}\n"
-puts ""
-puts "After #{ppi} percent hike in price:"
 
 bike = Bike.new(name, price, dealer)
+puts bike.to_s
+puts "After #{ppi} percent hike in price:"
 bike.price_increase(ppi)
+bike.price_increase(ppi)
+
 puts bike
