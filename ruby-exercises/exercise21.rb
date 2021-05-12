@@ -8,12 +8,9 @@
 # Code : 
 
 def factorial(n)
+  raise 'Negative number entered' if n.negative?
   (1..n).inject(:*)
 end
 
 n = ARGV[0].to_i
-if n.negative? 
-  raise 'Negative number entered'
-end
-
 puts factorial(n)

@@ -16,9 +16,8 @@ class Intrest
   attr_accessor :principal, :time
 
   INTREST_RATE = 0.1
-  def initialize(principal, time)
-    @principal = principal
-    @time = time
+  def initialize()
+    yield(self)
   end
 
   def calculate_diffrence
@@ -31,5 +30,8 @@ end
 input = ARGV
 principal = input[0].to_f
 time = input[1].to_f
-obj = Intrest.new(principal, time)
+obj = Intrest.new do |parameter|
+  parameter.principal = principal
+  parameter.time = time
+end
 obj.calculate_diffrence
