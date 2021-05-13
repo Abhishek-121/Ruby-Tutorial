@@ -6,23 +6,20 @@
 # (Can) you (can) a (can) as a (can)ner (can) (can) a (can) ? Total Occurences found: 7
 
 # [input]
-# "Can you can a can as a canner can can a can ?" "can"
+# "Can you can a can as a canner can can a can?" "can"
 # [output]
 # (Can) you (can) a (can) as a (can)ner (can) (can) a (can) ?
-# Total occurrences found: 7 
+# Total occurrences found: 7
 
 # Code :
 
 def highlight_search_res(sentence, word)
-  count = 0
+  count = sentence.split.count{ |matched| matched.downcase.include?('can') }
+  capital_word = word.dup
+  capital_word[0] = capital_word[0].upcase
   s = ""
-  s += sentence.gsub("#{word}", "(#{word})")
+  s += sentence.gsub("#{word}", "(#{word})").gsub("#{capital_word}", "(#{capital_word})")
   s += "\n"
-  sentence.split.each do |x|
-    if x == word
-      count += 1
-    end
-  end
   s += "Total occurence found : #{count}"
 end
 

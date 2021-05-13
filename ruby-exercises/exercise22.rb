@@ -19,15 +19,19 @@ class Name
   def initialize(first_name, last_name)
     @first_name = first_name
     @last_name = last_name
+    validate
   end
 
   def validate
     raise 'Firstname cannot be blank' if @first_name.empty?
     raise 'Lastname cannot be blank' if @last_name.empty?
     raise 'Firstname must start with uppercase' unless @first_name.upcase[0] == @first_name[0]
-
+  end
+  
+  def inspect
     "Your name is #{@first_name} #{@last_name}"
   end
+
 end
 
 
@@ -35,4 +39,4 @@ input = ARGV
 first_name = input[0]
 last_name = input[1]
 name = Name.new(first_name, last_name)
-puts name.validate
+puts name.inspect
