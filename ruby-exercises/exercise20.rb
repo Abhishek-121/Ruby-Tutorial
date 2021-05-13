@@ -12,26 +12,26 @@
 
 # Code : 
 
-class Intrest
+class Interest
   attr_accessor :principal, :time
 
-  INTREST_RATE = 0.1
+  INTEREST_RATE = 0.1
   def initialize()
     yield(self)
   end
 
   def calculate_diffrence
-    simple_intrest = @principal + (@principal * INTREST_RATE * @time)
-    compound_intrest = @principal * (1 + INTREST_RATE)**@time
-    puts "%.2f" % (compound_intrest - simple_intrest)
+    simple_interest = @principal + (@principal * INTEREST_RATE * @time)
+    compound_interest = @principal * (1 + INTEREST_RATE)**@time
+    "%.2f" % (compound_interest - simple_interest)
   end
 end
 
 input = ARGV
 principal = input[0].to_f
 time = input[1].to_f
-obj = Intrest.new do |parameter|
-  parameter.principal = principal
-  parameter.time = time
+obj = Interest.new do |interest|
+  interest.principal = principal
+  interest.time = time
 end
-obj.calculate_diffrence
+puts obj.calculate_diffrence
