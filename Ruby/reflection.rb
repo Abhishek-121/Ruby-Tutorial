@@ -76,5 +76,74 @@ end
 class Object
   prepend SystemHook
 end
-puts system("date")
-puts system("kangaroo", "-hop 10", "skippy")
+puts system('date')
+puts system('kangaroo', '-hop 10', 'skippy')
+
+# Tracing the program execution
+# class Test 
+#   def test 
+#     a = 23
+#   end
+# end
+
+# TracePoint.trace do |t|
+#   p t
+# end
+# te = Test.new
+# te.test
+puts '-------------------------------'
+
+# Caller = to return call stack
+
+def method1
+  puts caller
+end
+
+def method2
+  method1
+end
+
+def method3
+  method2
+end
+method3
+
+# Output the source code
+print File.read(__FILE__)
+
+# To show intermediate code
+code = RubyVM::InstructionSequence.compile('a = 1; puts 1 + a') 
+puts code.disassemble
+
+# Custom Serialization Strategy
+
+class Special
+  def initialize(valuable, volatile, precious)
+    @valuable = valuable
+    @volatile = volatile
+    @precious = precious
+  end
+
+  def marshal_dump
+  [@valuable, @precious]
+  end
+
+  def marshal_load(variables) 
+    @valuable = variables[0] 
+    @precious = variables[1] 
+    @volatile = 'unknown'
+  end
+
+  def to_s
+  "#@valuable #@volatile #@precious"
+  end 
+end
+
+obj = Special.new("Hello", "there", "Ruby") 
+puts "Before: obj = #{obj}"
+data = Marshal.dump(obj)
+obj = Marshal.load(data) 
+puts "After: obj = #{obj}"
+
+# YAML for Marshaling
+# The Marshal module is built into the interpreter and uses a binary format to store objects externally.
