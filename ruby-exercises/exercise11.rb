@@ -23,5 +23,6 @@ def pascal_triangle(n)
     yield(lst)
   end
 end
+
 number = ARGV[0].to_i
 pascal_triangle(number) { |lst| p lst }
