@@ -30,6 +30,7 @@ def prime_number(n)
       end
     end
   end
+  
   (2..n).each do |primes|
     res << primes if prime[primes]
   end
