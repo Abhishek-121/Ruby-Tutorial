@@ -11,6 +11,5 @@ def factorial(n)
   raise 'Negative number entered' if n.negative?
   (1..n).inject(:*)
 end
-
 n = ARGV[0].to_i
 puts factorial(n)
