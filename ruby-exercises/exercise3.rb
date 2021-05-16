@@ -1,4 +1,3 @@
-# frozen_string_literal: true
 
 # Exercise: 3 - Fibonacci using Yield
 # Write a program to print a Fibonacci series.
