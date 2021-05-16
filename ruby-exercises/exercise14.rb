@@ -10,4 +10,5 @@
 # Code :
 
 input_string = gets.chomp.split(' ')
+
 puts input_string.reverse.join(' ')
