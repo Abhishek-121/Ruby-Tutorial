@@ -39,6 +39,7 @@ def character_count(input_string)
     end
   end
   res = {'Lowercase characters'=>lower_case, 'Uppercase characters'=>upper_case, 'Numeric characters'=>digits, 'Special characters'=> special_character}
+  
   res
 end
 
