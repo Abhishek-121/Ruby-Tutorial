@@ -14,11 +14,12 @@
 # Code :
 
 def factorial(n)
-  fact = 1
-  (1..n).each do |x|
-    fact *= x
-  end
-  # (1..n).inject(:*) --> 2nd method
+  (1..n).inject(:*)
+#  --> 2nd method
+#   fact = 1
+#   (1..n).each do |x|
+#     fact *= x
+#   end
   fact
 end
 
