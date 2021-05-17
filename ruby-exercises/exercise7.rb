@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Exercise: 7 - Inverse Case
 
 # Overwrite the default 'to_s' method such that it inverses the case of each letter.
@@ -18,5 +16,6 @@ class String
     swapcase
   end
 end
+
 input_string = ARGV.join(' ').chomp
 puts input_string.to_s
