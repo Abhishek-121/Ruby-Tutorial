@@ -1,4 +1,40 @@
-# frozen_string_literal: true
+# Exercise: 5 - Customer Account Balance
+# Define a class Account with three three attributes "name","account_no" & "balance". 
+# Name and Balance should be set when creating an object of Account class, account_number should be auto increment. 
+# This Account class must have two methods, deposit() and withdraw(). Your code should take three arguments
+# customer one 
+# customer two 
+# transaction amount
+  
+# Input Format:
+# customer_name1:account_balance1 customer_name2:account_balance2 transfer:transaction_amount
+  
+# [input]
+# Rahul:2000 Abhishek:3000 transfer:200
+# [/input]
+# [output]
+# Account number: 1
+# Account holder name: Rahul
+# Account balance: 1800
+
+# Account number:	 2
+# Account holder name: Abhishek
+# Account balance: 3200 
+# [/output]
+  
+# [input]
+# "Shivam Goel":12500 "Jatin Kapoor":1000 transfer:12000
+# [/input]
+# [output]
+# Account number: 1
+# Account holder name: Shivam Goel
+# Account balance: 500
+
+# Account number: 2
+# Account holder name: Jatin Kapoor
+# Account balance: 13000 
+
+# Code :
 
 class Account
   @@account_no = 0
