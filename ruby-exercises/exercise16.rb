@@ -15,8 +15,7 @@
 
 def highlight_search_res(sentence, word)
   count = sentence.split.count{ |matched| matched.downcase.include?('can') }
-  capital_word = word.dup
-  capital_word[0] = capital_word[0].upcase
+  capital_word = word.dup.capitialize()
   s = ""
   s += sentence.gsub("#{word}", "(#{word})").gsub("#{capital_word}", "(#{capital_word})")
   s += "\n"
