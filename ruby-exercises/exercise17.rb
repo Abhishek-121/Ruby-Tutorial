@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Exercise: 17 Sum Time
 # Write a method that sums up 2 24-hour time values(h:m:s).
 # Validate the time using regular expressions.
@@ -5,23 +7,21 @@
 # Note: Make use of Time class
 
 require 'time'
-
 def sum_time(time1, time2)
- 
   time1_in_seconds = time1.hour * 3600 + time1.min * 60 + time1.sec
   time2_in_seconds = time2.hour * 3600 + time2.min * 60 + time2.sec
   total_sec = time1_in_seconds + time2_in_seconds
-  days = total_sec/86400
-  remain_sec = total_sec % 86400
+  days = total_sec / 86_400
+  remain_sec = total_sec % 86_400
   time = Time.at(remain_sec).utc.strftime('%T')
   day = "#{days} day & " if days.positive?
   "#{day}#{time}"
 end
 
-TIME_PATTERN = /^([0-2]?[0-3]|[0-1]?[0-9]):([0-5][0-9]):([0-5][0-9])/
+TIME_PATTERN = /^([0-2]?[0-3]|[0-1]?[0-9]):([0-5][0-9]):([0-5][0-9])/.freeze
 
 input_time = ARGV
-input = input_time[0].split(",")
+input = input_time[0].split(',')
 
 t1 = TIME_PATTERN.match(input[0])
 t2 = TIME_PATTERN.match(input[1])
