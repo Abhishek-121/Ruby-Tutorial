@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Exercise: 9 Array - Hash
 # Create a method for Array that returns a hash having 'key' as the length of the element and
 # value as an array of all the elements of that length. Make use of Array#each.
@@ -13,9 +11,9 @@
 
 # Code :
 
-def hash_count(input_hash)
+def hash_count(input_list)
   res = {}
-  input_hash.each do |x|
+  input_list.each do |x|
     key = x.length
     if res[key]
       res[key].push(x)
@@ -26,5 +24,5 @@ def hash_count(input_hash)
   res.sort.to_h
 end
 
-input_hash = gets.chomp.strip.gsub!(/"|'|\[|\]/, '').split(',')
-puts hash_count(input_hash)
+input_list = gets.chomp.strip.gsub!(/"|'|\[|\]/, '').split(',')
+puts hash_count(input_list)
