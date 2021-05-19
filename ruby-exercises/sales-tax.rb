@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class SalesTax
   @grand_total = 0
   def initialize(price, product, imported, exempted)
@@ -22,15 +20,15 @@ class SalesTax
   end
 
   loop do
-    puts 'Name of the product: '
+    print 'Name of the product: '
     product = gets.chomp
-    puts 'Imported?:'
+    print 'Imported?: '
     imported = gets.chomp
-    puts 'Exempted from sales tax?'
+    print 'Exempted from sales tax? '
     exempted = gets.chomp
-    puts 'Price: '
+    print 'Price: '
     price = gets.to_i
-    puts 'Do you want to add more items to your list(y/n): '
+    print 'Do you want to add more items to your list(y/n): '
     option = gets.chomp
     next unless option.downcase == 'n'
 
@@ -47,56 +45,3 @@ class SalesTax
     break
   end
 end
-
-# Without Rubocop
-# class SalesTax
-#   @grand_total = 0
-#   def initialize(price, product, imported, exempted)
-#     @price = Float(price)
-#     @product = product
-#     @imported = imported
-#     @exempted = exempted
-#   end
-
-#   def flat_tax
-#     @price += @price * 0.1
-#   end
-
-#   def imported_duty
-#     @price += @price * 0.05
-#   end
-
-#   def exempted
-#     @price
-#   end
-
-#   while true do
-#     puts 'Name of the product: '
-#     product = gets.chomp
-#     puts 'Imported?:'
-#     imported = gets.chomp
-#     puts 'Exempted from sales tax?'
-#     exempted = gets.chomp
-#     puts 'Price: '
-#     price = gets.to_i
-#     puts 'Do you want to add more items to your list(y/n): '
-#     option = gets.chomp
-#     if option.downcase == 'n'
-#       sales_tax = SalesTax.new(price, product, imported, exempted)
-#       if product == "book" || product == "medicine" || product == "food"
-#         exempted = 'yes'
-#       end
-#       if exempted == 'yes'
-#         @grand_total += sales_tax.exempted
-#       else
-#         @grand_total += sales_tax.flat_tax
-#       end
-
-#       if imported.downcase == 'yes'
-#         @grand_total += sales_tax.imported_duty
-#       end
-#       puts @grand_total
-#       break
-#     end
-#   end
-# end
