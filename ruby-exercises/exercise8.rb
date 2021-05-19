@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Exercise: 8 Power - Array
 
 # Define a method power() for an array. It takes an argument 'x' and
@@ -14,10 +12,8 @@
 def power(arr, pow)
   arr.map { |ele| ele**pow }
 end
-
 input = ARGV
 # arr = input.strip.gsub!(/"|'|\[|\]|,|/, ' ').split(' ')
 arr = input[0].gsub('[', '').gsub(']', '').split(',').map(&:to_i)
 pow = input[1].to_i
-
 print power(arr, pow)
