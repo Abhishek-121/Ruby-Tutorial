@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 # Exercise: 23 CSV
 
 # Read a CSV file:
@@ -29,7 +27,6 @@ data = CSV.read('employee.csv', headers: true)
 # puts data
 data_list = data.to_a[1..data.length]
 puts data_list
-# puts '------------------------------------'
 record = data_list.group_by { |row| row[2] }
 puts record
 record.each do |_key, value|
@@ -40,7 +37,7 @@ end
 def append_details(record)
   File.open('output.txt', 'w') do |file|
     record.each do |designation, value|
-      file.puts designation.to_s
+      file.puts "#{designation}#{"s" if details[designation].length > 1}"
       value.each { |lst| file.puts "#{lst[0]} (EmpId: #{lst[1]})" }
       file.puts
     end
