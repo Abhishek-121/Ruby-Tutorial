@@ -31,7 +31,6 @@ class SalesTax
     print 'Do you want to add more items to your list(y/n): '
     option = gets.chomp
     next unless option.downcase == 'n'
-
     sales_tax = SalesTax.new(price, product, imported, exempted)
     exempted = 'yes' if %w[book medicine food].include?(product)
     @grand_total += if exempted == 'yes'
@@ -39,7 +38,6 @@ class SalesTax
                     else
                       sales_tax.flat_tax
                     end
-
     @grand_total += sales_tax.imported_duty if imported.downcase == 'yes'
     puts @grand_total
     break
