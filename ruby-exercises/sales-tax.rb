@@ -1,3 +1,31 @@
+# Exercise: Sales Tax Problem
+# Sales Tax Problem: You have to write a program in Ruby which would 
+# calculate the sales tax on the items according to the following conditions:
+
+# a. Flat 10 % sales tax is applicable on all items except for book, food and medicine
+# b. Additional Import Duty of 5 % is applicable on all imported items without any exceptions
+# The input to the program would be in the following format: 
+  
+# Name of the product: Chocolates
+# Imported?: yes
+# Exempted from sales tax? Yes
+# Price: 120
+# Do you want to add more items to your list(y/n): y
+# Name of the product: Potato Chips
+# Imported?: no
+# Exempted from sales tax?: yes
+# Price: 100
+# Do you want to add more items to your list(y/n): y
+# Name of the product: Perfume
+# Imported?: yes
+# Exempted from sales tax? No
+# Price: 150
+# Do you want to add more items to your list(y/n): n
+# You have to generate a list that would display the list in a nice format and 
+# the grand total should be rounded to the nearest integer.
+
+#  Code :
+
 class SalesTax
   @grand_total = 0
   def initialize(price, product, imported, exempted)
