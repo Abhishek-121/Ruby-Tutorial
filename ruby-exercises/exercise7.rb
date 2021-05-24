@@ -7,6 +7,7 @@
 # [output]
 # g@@D mORNINg
 # [/output]
+
 # Code:
 
 class String
